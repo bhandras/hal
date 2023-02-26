@@ -34,6 +34,7 @@ pub fn execute<'a>(matches: &clap::ArgMatches<'a>) {
 fn cmd_descriptor<'a>() -> clap::App<'a, 'a> {
 	cmd::subcommand("descriptor", "get information about an output descriptor")
 		.arg(cmd::opt_yaml())
+		.args(&cmd::opts_networks())
 		.args(&[cmd::arg("descriptor", "the output descriptor to inspect").required(false)])
 }
 
